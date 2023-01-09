@@ -1,0 +1,143 @@
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+  background-image: linear-gradient(-20deg, #ffffff 0%, #fbfcdb 100%);
+  max-width: 1000px;
+  border: 1px solid #383838;
+
+  .bdHead {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+
+    .bdTitle {
+      background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      
+      h2 {
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        padding: 4px 6px 8px;
+        font-size: 12px;
+        color: #739471;
+      }
+      
+      li::after {
+        border-bottom: 1px solid #739471;
+        content: '';
+        width: 8px;
+        display: block;
+      }
+    }
+  }
+
+  .bdCont {
+    display: flex;
+    flex-wrap: wrap;
+
+    .canvas {
+      border: 2px solid black;
+      width: 900px;
+      box-sizing: border-box;
+    }
+
+    .toolbar {
+      width: 50px;
+      height: 600px;
+      
+      .tool {
+        height: 45px;
+        width: 50px;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #dcdcdc;
+        border-radius: 5px;
+        transition: 0.2s;
+
+        .dl a#download {
+          color: #dcdcdc;
+        }
+      
+        input.tool[type="color"] {
+          height: 45px;
+          width: 50px;
+          margin: auto;
+        }
+
+        &:hover {
+          border-radius: 5px;
+          background-color: #afc5ae;
+          transition: 0.2s;
+        }
+
+        &.active {
+          background-color: #739471;
+          .fas {
+            color: #fff;
+          }
+        }
+
+        .fas {
+          font-size: 25px;
+          color: #739471;
+        }
+      }
+    }
+    .brushPanel.hide {
+      visibility:hidden
+    }
+    .brushPanel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #739471;
+
+      height: 50px;
+      width: 300px;
+
+      input.brushSize[type="range"] {
+        width: 200px;
+        position: relative;
+      }
+  
+      label {
+        color: #dcdcdc;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .brushSizeLabel {
+        position: relative;
+        left: -40px;
+      }
+    }
+  }
+}
